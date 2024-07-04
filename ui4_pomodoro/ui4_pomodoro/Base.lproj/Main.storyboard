@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pw7-dI-6a6">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
@@ -8,54 +8,45 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="t9E-pN-4XV">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ui4_pomodoro" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController storyboardIdentifier="ViewController" id="pw7-dI-6a6" customClass="ViewController" customModule="ui4_pomodoro" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yOX-db-3fJ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LrG-Av-j9Z">
-                                <rect key="frame" x="40" y="79" width="313" height="313"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WfL-vI-oHg">
+                                <rect key="frame" x="60" y="493" width="100" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="LrG-Av-j9Z" secondAttribute="height" multiplier="1:1" id="U0F-3Q-4GC"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hag-Yx-Emf">
-                                <rect key="frame" x="80" y="447" width="100" height="50"/>
-                                <color key="backgroundColor" red="1" green="0.58546906399999998" blue="0.0072833478759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="Ree-2c-NO3"/>
-                                    <constraint firstAttribute="height" constant="50" id="mib-mA-EaI"/>
+                                    <constraint firstAttribute="width" constant="100" id="Bt5-3B-rjU"/>
+                                    <constraint firstAttribute="height" constant="50" id="Y4I-aS-gax"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" titleAlignment="center">
+                                <buttonConfiguration key="configuration" style="filled">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Start">
                                             <attributes>
                                                 <font key="NSFont" size="24" name="Helvetica-Bold"/>
                                                 <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
-                                    <color key="baseBackgroundColor" red="1" green="0.58546906399999998" blue="0.0072833478759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="startPauseTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qNf-uE-sQh"/>
+                                    <action selector="startPauseButtonTapped:" destination="pw7-dI-6a6" eventType="touchUpInside" id="Zw8-h3-62g"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="54G-uG-szQ">
-                                <rect key="frame" x="213" y="447" width="100" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4N-tc-K4f">
+                                <rect key="frame" x="233" y="493" width="100" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="7Tc-4A-9Rb"/>
-                                    <constraint firstAttribute="width" constant="100" id="y72-4N-5zW"/>
+                                    <constraint firstAttribute="width" constant="100" id="gJS-R3-TT5"/>
+                                    <constraint firstAttribute="height" constant="50" id="ggt-Bz-19S"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" titleAlignment="center">
+                                <buttonConfiguration key="configuration" style="plain">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Reset">
                                             <attributes>
@@ -64,34 +55,35 @@
                                             </attributes>
                                         </fragment>
                                     </attributedString>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="resetTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tGd-j2-MBW"/>
+                                    <action selector="resetButtonTapped:" destination="pw7-dI-6a6" eventType="touchUpInside" id="45v-nd-5CD"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="53K-88-Gcz"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="LrG-Av-j9Z" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="3G1-z9-Wfj"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="54G-uG-szQ" secondAttribute="trailing" constant="80" id="9o6-6v-hj7"/>
-                            <constraint firstItem="LrG-Av-j9Z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="A0g-N1-bC9"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LrG-Av-j9Z" secondAttribute="trailing" constant="40" id="NxD-6E-A7x"/>
-                            <constraint firstItem="Hag-Yx-Emf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="YHG-fN-682"/>
-                            <constraint firstItem="54G-uG-szQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Hag-Yx-Emf" secondAttribute="trailing" constant="8" symbolic="YES" id="afS-y3-nbO"/>
-                            <constraint firstItem="Hag-Yx-Emf" firstAttribute="baseline" secondItem="54G-uG-szQ" secondAttribute="baseline" id="td5-ih-PUO"/>
-                            <constraint firstItem="Hag-Yx-Emf" firstAttribute="top" secondItem="LrG-Av-j9Z" secondAttribute="bottom" constant="55" id="wo1-sK-u09"/>
+                            <constraint firstItem="WfL-vI-oHg" firstAttribute="leading" secondItem="53K-88-Gcz" secondAttribute="leading" constant="60" id="2v8-PA-8Wk"/>
+                            <constraint firstItem="53K-88-Gcz" firstAttribute="bottom" secondItem="h4N-tc-K4f" secondAttribute="bottom" constant="275" id="DNf-xd-A9o"/>
+                            <constraint firstItem="53K-88-Gcz" firstAttribute="trailing" secondItem="h4N-tc-K4f" secondAttribute="trailing" constant="60" id="QtU-Nh-sf0"/>
+                            <constraint firstItem="53K-88-Gcz" firstAttribute="bottom" secondItem="WfL-vI-oHg" secondAttribute="bottom" constant="275" id="dkI-e1-N8t"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="resetButton" destination="54G-uG-szQ" id="jV5-9F-0xX"/>
-                        <outlet property="startPauseButton" destination="Hag-Yx-Emf" id="yQc-v3-fUK"/>
-                        <outlet property="timeLabel" destination="LrG-Av-j9Z" id="WEG-5f-N6v"/>
+                        <outlet property="resetButton" destination="h4N-tc-K4f" id="gj4-z4-fBu"/>
+                        <outlet property="startPauseButton" destination="WfL-vI-oHg" id="9gw-9R-tLu"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l7e-0F-O0n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="35.877862595419849" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="8.3969465648854964" y="-86.619718309859152"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

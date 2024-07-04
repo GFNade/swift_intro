@@ -7,29 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9DF01BB92C2C213900C306BF /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF01BB82C2C213900C306BF /* CircleView.swift */; };
-		AFC516FA2C2AD04100B4A36D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC516F92C2AD04100B4A36D /* AppDelegate.swift */; };
-		AFC516FC2C2AD04100B4A36D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC516FB2C2AD04100B4A36D /* SceneDelegate.swift */; };
-		AFC516FE2C2AD04100B4A36D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC516FD2C2AD04100B4A36D /* ViewController.swift */; };
-		AFC517012C2AD04100B4A36D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFC516FF2C2AD04100B4A36D /* Main.storyboard */; };
-		AFC517032C2AD04500B4A36D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFC517022C2AD04500B4A36D /* Assets.xcassets */; };
-		AFC517062C2AD04500B4A36D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFC517042C2AD04500B4A36D /* LaunchScreen.storyboard */; };
+		9D3FB9102C2D42FE0045E38D /* week3_movie_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3FB90F2C2D42FE0045E38D /* week3_movie_appApp.swift */; };
+		9D3FB9122C2D42FE0045E38D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3FB9112C2D42FE0045E38D /* ContentView.swift */; };
+		9D3FB9142C2D42FF0045E38D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D3FB9132C2D42FF0045E38D /* Assets.xcassets */; };
+		9D3FB9182C2D42FF0045E38D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D3FB9172C2D42FF0045E38D /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9DF01BB82C2C213900C306BF /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
-		AFC516F62C2AD04100B4A36D /* ui4_pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ui4_pomodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AFC516F92C2AD04100B4A36D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AFC516FB2C2AD04100B4A36D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AFC516FD2C2AD04100B4A36D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AFC517002C2AD04100B4A36D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AFC517022C2AD04500B4A36D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AFC517052C2AD04500B4A36D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		AFC517072C2AD04500B4A36D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D3FB90C2C2D42FE0045E38D /* week3_movie_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = week3_movie_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D3FB90F2C2D42FE0045E38D /* week3_movie_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = week3_movie_appApp.swift; sourceTree = "<group>"; };
+		9D3FB9112C2D42FE0045E38D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9D3FB9132C2D42FF0045E38D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9D3FB9152C2D42FF0045E38D /* week3_movie_app.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = week3_movie_app.entitlements; sourceTree = "<group>"; };
+		9D3FB9172C2D42FF0045E38D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		AFC516F32C2AD04100B4A36D /* Frameworks */ = {
+		9D3FB9092C2D42FE0045E38D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,73 +33,78 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AFC516ED2C2AD04100B4A36D = {
+		9D3FB9032C2D42FD0045E38D = {
 			isa = PBXGroup;
 			children = (
-				AFC516F82C2AD04100B4A36D /* ui4_pomodoro */,
-				AFC516F72C2AD04100B4A36D /* Products */,
+				9D3FB90E2C2D42FE0045E38D /* week3_movie_app */,
+				9D3FB90D2C2D42FE0045E38D /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		AFC516F72C2AD04100B4A36D /* Products */ = {
+		9D3FB90D2C2D42FE0045E38D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AFC516F62C2AD04100B4A36D /* ui4_pomodoro.app */,
+				9D3FB90C2C2D42FE0045E38D /* week3_movie_app.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AFC516F82C2AD04100B4A36D /* ui4_pomodoro */ = {
+		9D3FB90E2C2D42FE0045E38D /* week3_movie_app */ = {
 			isa = PBXGroup;
 			children = (
-				AFC516F92C2AD04100B4A36D /* AppDelegate.swift */,
-				AFC516FB2C2AD04100B4A36D /* SceneDelegate.swift */,
-				AFC516FD2C2AD04100B4A36D /* ViewController.swift */,
-				9DF01BB82C2C213900C306BF /* CircleView.swift */,
-				AFC516FF2C2AD04100B4A36D /* Main.storyboard */,
-				AFC517022C2AD04500B4A36D /* Assets.xcassets */,
-				AFC517042C2AD04500B4A36D /* LaunchScreen.storyboard */,
-				AFC517072C2AD04500B4A36D /* Info.plist */,
+				9D3FB90F2C2D42FE0045E38D /* week3_movie_appApp.swift */,
+				9D3FB9112C2D42FE0045E38D /* ContentView.swift */,
+				9D3FB9132C2D42FF0045E38D /* Assets.xcassets */,
+				9D3FB9152C2D42FF0045E38D /* week3_movie_app.entitlements */,
+				9D3FB9162C2D42FF0045E38D /* Preview Content */,
 			);
-			path = ui4_pomodoro;
+			path = week3_movie_app;
+			sourceTree = "<group>";
+		};
+		9D3FB9162C2D42FF0045E38D /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				9D3FB9172C2D42FF0045E38D /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AFC516F52C2AD04100B4A36D /* ui4_pomodoro */ = {
+		9D3FB90B2C2D42FE0045E38D /* week3_movie_app */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AFC5170A2C2AD04500B4A36D /* Build configuration list for PBXNativeTarget "ui4_pomodoro" */;
+			buildConfigurationList = 9D3FB91B2C2D42FF0045E38D /* Build configuration list for PBXNativeTarget "week3_movie_app" */;
 			buildPhases = (
-				AFC516F22C2AD04100B4A36D /* Sources */,
-				AFC516F32C2AD04100B4A36D /* Frameworks */,
-				AFC516F42C2AD04100B4A36D /* Resources */,
+				9D3FB9082C2D42FE0045E38D /* Sources */,
+				9D3FB9092C2D42FE0045E38D /* Frameworks */,
+				9D3FB90A2C2D42FE0045E38D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = ui4_pomodoro;
-			productName = ui4_pomodoro;
-			productReference = AFC516F62C2AD04100B4A36D /* ui4_pomodoro.app */;
+			name = week3_movie_app;
+			productName = week3_movie_app;
+			productReference = 9D3FB90C2C2D42FE0045E38D /* week3_movie_app.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		AFC516EE2C2AD04100B4A36D /* Project object */ = {
+		9D3FB9042C2D42FD0045E38D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1520;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
-					AFC516F52C2AD04100B4A36D = {
+					9D3FB90B2C2D42FE0045E38D = {
 						CreatedOnToolsVersion = 15.2;
 					};
 				};
 			};
-			buildConfigurationList = AFC516F12C2AD04100B4A36D /* Build configuration list for PBXProject "ui4_pomodoro" */;
+			buildConfigurationList = 9D3FB9072C2D42FD0045E38D /* Build configuration list for PBXProject "week3_movie_app" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -113,64 +112,42 @@
 				en,
 				Base,
 			);
-			mainGroup = AFC516ED2C2AD04100B4A36D;
-			productRefGroup = AFC516F72C2AD04100B4A36D /* Products */;
+			mainGroup = 9D3FB9032C2D42FD0045E38D;
+			productRefGroup = 9D3FB90D2C2D42FE0045E38D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AFC516F52C2AD04100B4A36D /* ui4_pomodoro */,
+				9D3FB90B2C2D42FE0045E38D /* week3_movie_app */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		AFC516F42C2AD04100B4A36D /* Resources */ = {
+		9D3FB90A2C2D42FE0045E38D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFC517062C2AD04500B4A36D /* LaunchScreen.storyboard in Resources */,
-				AFC517032C2AD04500B4A36D /* Assets.xcassets in Resources */,
-				AFC517012C2AD04100B4A36D /* Main.storyboard in Resources */,
+				9D3FB9182C2D42FF0045E38D /* Preview Assets.xcassets in Resources */,
+				9D3FB9142C2D42FF0045E38D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		AFC516F22C2AD04100B4A36D /* Sources */ = {
+		9D3FB9082C2D42FE0045E38D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DF01BB92C2C213900C306BF /* CircleView.swift in Sources */,
-				AFC516FE2C2AD04100B4A36D /* ViewController.swift in Sources */,
-				AFC516FA2C2AD04100B4A36D /* AppDelegate.swift in Sources */,
-				AFC516FC2C2AD04100B4A36D /* SceneDelegate.swift in Sources */,
+				9D3FB9122C2D42FE0045E38D /* ContentView.swift in Sources */,
+				9D3FB9102C2D42FE0045E38D /* week3_movie_appApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		AFC516FF2C2AD04100B4A36D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AFC517002C2AD04100B4A36D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		AFC517042C2AD04500B4A36D /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AFC517052C2AD04500B4A36D /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		AFC517082C2AD04500B4A36D /* Debug */ = {
+		9D3FB9192C2D42FF0045E38D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -222,18 +199,16 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		AFC517092C2AD04500B4A36D /* Release */ = {
+		9D3FB91A2C2D42FF0045E38D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -279,68 +254,83 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		AFC5170B2C2AD04500B4A36D /* Debug */ = {
+		9D3FB91C2C2D42FF0045E38D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = week3_movie_app/week3_movie_app.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"week3_movie_app/Preview Content\"";
 				DEVELOPMENT_TEAM = Y7SSWSYC6W;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ui4_pomodoro/Info.plist;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.6;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.myapp.ui4-pomodoro";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.myapp.week3-movie-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		AFC5170C2C2AD04500B4A36D /* Release */ = {
+		9D3FB91D2C2D42FF0045E38D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = week3_movie_app/week3_movie_app.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"week3_movie_app/Preview Content\"";
 				DEVELOPMENT_TEAM = Y7SSWSYC6W;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ui4_pomodoro/Info.plist;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.6;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.myapp.ui4-pomodoro";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.myapp.week3-movie-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -350,25 +340,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AFC516F12C2AD04100B4A36D /* Build configuration list for PBXProject "ui4_pomodoro" */ = {
+		9D3FB9072C2D42FD0045E38D /* Build configuration list for PBXProject "week3_movie_app" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AFC517082C2AD04500B4A36D /* Debug */,
-				AFC517092C2AD04500B4A36D /* Release */,
+				9D3FB9192C2D42FF0045E38D /* Debug */,
+				9D3FB91A2C2D42FF0045E38D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AFC5170A2C2AD04500B4A36D /* Build configuration list for PBXNativeTarget "ui4_pomodoro" */ = {
+		9D3FB91B2C2D42FF0045E38D /* Build configuration list for PBXNativeTarget "week3_movie_app" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AFC5170B2C2AD04500B4A36D /* Debug */,
-				AFC5170C2C2AD04500B4A36D /* Release */,
+				9D3FB91C2C2D42FF0045E38D /* Debug */,
+				9D3FB91D2C2D42FF0045E38D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = AFC516EE2C2AD04100B4A36D /* Project object */;
+	rootObject = 9D3FB9042C2D42FD0045E38D /* Project object */;
 }
