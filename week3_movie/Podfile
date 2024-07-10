@@ -10,4 +10,8 @@ target 'week3_movie' do
     pod 'SwiftyJSON'
     pod 'RxSwift'
     pod 'RxCocoa'	
+    pod 'Kingfisher'
+    pod 'Hero'
+    pod 'Cosmos'
+    pod 'TinyConstraints'
 end
