@@ -38,8 +38,12 @@ class MovieDetailViewController: UIViewController {
         super.viewDidLoad()
         
         self.hero.isEnabled = true
+        
+        setupBindings()
 
         handleChangeButton(viewModel.isOnWatchlist)
+        handleChangeFavoriteButton(viewModel.isInFavoriteList)
+        
         if let movieId = movieId {
             fetchMovieDetails(movieId: movieId)
             detailMovieImage.hero.id = "poster_\(movieId)"
@@ -56,25 +60,25 @@ class MovieDetailViewController: UIViewController {
             addToWatchlistButton.layer.borderColor = UIColor.white.cgColor;
             addToWatchlistButton.layer.masksToBounds = true;
         }
-        fetchFavoritelist()
+        viewModel.fetchFavoriteList()
+        viewModel.fetchWatchlist()
     }
     
-    
-    
-    func fetchFavoritelist() {
-        viewModel.fetchFavoriteList { [weak self] result in
-            switch result {
-            case .success(let favoriteIds):
-                self?.viewModel.favoritelist = favoriteIds
-                if let movieId = self?.movieId {
-                    self?.viewModel.isInFavoriteList = self?.viewModel.favoritelist.contains(movieId) ?? false
-                    self?.handleChangeFavoriteButton(self?.viewModel.isInFavoriteList)
-                }
-            case .failure(let error):
-                print("Error fetching favorite: \(error)")
-            }
-        }
+    func setupBindings() {
+        // Bindings for button actions
+        addToWatchlistButton.rx.tap
+            .subscribe(onNext: { [weak self] in
+                self?.addToWatchlist()
+            })
+            .disposed(by: disposeBag)
+        
+        addToFavoriteButton.rx.tap
+            .subscribe(onNext: { [weak self] in
+                self?.addToFavorite()
+            })
+            .disposed(by: disposeBag)
     }
+    
     
     func fetchMovieDetails(movieId: Int) {
         viewModel.fetchMovieDetails(movieId: movieId) { [weak self] result in
@@ -156,35 +160,34 @@ class MovieDetailViewController: UIViewController {
     @IBAction func watchTrailerButton(_ sender: Any) {
     }
     
-    
-    @IBAction func addToWatchlistButton(_ sender: Any) {
+    func addToWatchlist() {
+        // Handle addToWatchlist action
         guard let movieId = movieId else { return }
         viewModel.addToWatchlist(movieId: movieId, isOnWatchlist: viewModel.isOnWatchlist) { [weak self] result in
             switch result {
             case .success(let watchlistResponse):
                 self?.viewModel.isOnWatchlist.toggle()
-                self?.handleChangeButton(self?.viewModel.isOnWatchlist)
-                print("Status Code: \(watchlistResponse.statusCode)")
-                print("Status Message: \(watchlistResponse.statusMessage)")
+                self?.handleChangeButton(self?.viewModel.isOnWatchlist ?? false)
             case .failure(let error):
                 print("Error adding to watchlist: \(error)")
             }
         }
     }
     
-    
-    @IBAction func addToFavourite(_ sender: Any) {
+    func addToFavorite() {
+        // Handle addToFavorite action
         guard let movieId = movieId else { return }
         viewModel.addToFavoriteList(movieId: movieId, isInFavoriteList: viewModel.isInFavoriteList) { [weak self] result in
             switch result {
             case .success(let favoritelistResponse):
                 self?.viewModel.isInFavoriteList.toggle()
-                self?.handleChangeFavoriteButton(self?.viewModel.isInFavoriteList)
+                self?.handleChangeFavoriteButton(self?.viewModel.isInFavoriteList ?? false)
                 print("Status Code: \(favoritelistResponse.statusCode)")
                 print("Status Message: \(favoritelistResponse.statusMessage)")
             case .failure(let error):
-                print("Error adding to favoritelist: \(error)")
+                print("Error adding to favorite list: \(error)")
             }
         }
     }
+
 }

@@ -1,11 +1,3 @@
-//
-//  MovieCardExtension.swift
-//  week3_movie
-//
-//  Created by NhanNT on 09/07/2024.
-//
-
-import Foundation
 import UIKit
 
 extension MovieCardViewController: UITableViewDataSource, UITableViewDelegate {
@@ -15,9 +7,10 @@ extension MovieCardViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCardCell", for: indexPath) as! MovieCardCell
-        if (viewModel.movies.count > 0) {
+        if indexPath.row < viewModel.movies.count {
             let movie = viewModel.movies[indexPath.row]
             cell.loadData(movie: movie)
+            cell.posterImageView.heroID = "poster_\(movie.id)"
         }
         return cell
     }
@@ -26,7 +19,7 @@ extension MovieCardViewController: UITableViewDataSource, UITableViewDelegate {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
         let screenHeight = scrollView.frame.size.height
-            
+        
         if offsetY > contentHeight - screenHeight && !viewModel.isLoading {
             viewModel.currentPage += 1
             viewModel.fetchMovies(page: viewModel.currentPage) { [weak self] _ in
@@ -38,10 +31,11 @@ extension MovieCardViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedMovie = viewModel.movies[indexPath.row]
-        if let cell = tableView.cellForRow(at: indexPath) as? MovieCardCell {
-            cell.posterImageView.heroID = "poster_\(selectedMovie.id)"
-            performSegue(withIdentifier: "MovieDetailViewController", sender: selectedMovie.id)
+        if viewModel.movies.indices.contains(indexPath.row) {
+            let selectedMovie = viewModel.movies[indexPath.row]
+            if tableView.cellForRow(at: indexPath) is MovieCardCell {
+                performSegue(withIdentifier: "MovieDetailViewController", sender: selectedMovie.id)
+            }
         }
     }
     
@@ -50,7 +44,21 @@ extension MovieCardViewController: UITableViewDataSource, UITableViewDelegate {
             if let movieDetailVC = segue.destination as? MovieDetailViewController,
                let movieId = sender as? Int {
                 movieDetailVC.movieId = movieId
-                movieDetailVC.viewModel.isOnWatchlist = viewModel.watchlist.contains(movieId)
+                do {
+                    let watchlist = try viewModel.watchlistSubject.value()
+                    movieDetailVC.viewModel.isOnWatchlist = watchlist.contains(movieId)
+                } catch {
+                    print("Error retrieving watchlist: \(error)")
+                    movieDetailVC.viewModel.isOnWatchlist = false
+                }
+                
+                do {
+                    let favoritelist = try viewModel.favoritelistSubject.value()
+                    movieDetailVC.viewModel.isInFavoriteList = favoritelist.contains(movieId)
+                } catch {
+                    print("Error retrieving favoritelist: \(error)")
+                    movieDetailVC.viewModel.isInFavoriteList = false
+                }
             }
         }
     }

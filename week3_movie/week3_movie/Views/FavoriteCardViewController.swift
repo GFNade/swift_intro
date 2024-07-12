@@ -27,6 +27,8 @@ class FavoriteCardViewController: UIViewController {
         tableView.delegate = self
         
         setupRefreshControl()
+        setupBindings()
+        
         viewModel.fetchFavoriteMovies { result in
             switch result {
             case .success(_):
@@ -47,6 +49,21 @@ class FavoriteCardViewController: UIViewController {
             }
         }
     }
+    
+    func setupBindings() {
+        viewModel.watchlistSubject
+            .subscribe(onNext: { [weak self] _ in
+                self?.fetchFavoriteMovies()
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.favoritelistSubject
+            .subscribe(onNext: { [weak self] _ in
+                self?.fetchFavoriteMovies()
+            })
+            .disposed(by: disposeBag)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -73,6 +90,17 @@ class FavoriteCardViewController: UIViewController {
             case .failure(let error):
                 print("Error refreshing favorite movies: \(error)")
                 self?.refreshControl.endRefreshing()
+            }
+        }
+    }
+    func fetchFavoriteMovies() {
+        viewModel.fetchFavoriteMovies { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success:
+                self.tableView.reloadData()
+            case .failure(let error):
+                print("Error fetching favorite movies: \(error)")
             }
         }
     }

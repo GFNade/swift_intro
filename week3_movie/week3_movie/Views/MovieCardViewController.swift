@@ -1,6 +1,8 @@
 import UIKit
 import Alamofire
 import Hero
+import RxSwift
+import RxCocoa
 
 class MovieCardViewController: UIViewController {
     
@@ -9,6 +11,7 @@ class MovieCardViewController: UIViewController {
     
     var viewModel = MovieCardViewModel()
     let refreshControl = UIRefreshControl()
+    let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,58 +21,61 @@ class MovieCardViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
+        setupBindings()
         setupRefreshControl()
-        bindViewModel()
-        viewModel.fetchWatchlist { [weak self] result in
-            switch result {
-            case .success:
-                self?.viewModel.fetchMovies(page: self?.viewModel.currentPage ?? 1) { _ in
-                    DispatchQueue.main.async {
-                        self?.tableView.reloadData()
-                    }
-                }
-            case .failure(let error):
-                print("Error fetching watchlist: \(error)")
-            }
-        }
+        
+        fetchWatchlistAndMovies()
+
     }
+    
+    
+    func setupBindings() {
+        viewModel.watchlistSubject
+            .subscribe(onNext: { [weak self] _ in
+                self?.fetchMovies()
+            })
+            .disposed(by: disposeBag)
+    }
+    
     func setupRefreshControl() {
         refreshControl.tintColor = .white
         refreshControl.addTarget(self, action: #selector(refreshMovies), for: .valueChanged)
         tableView.refreshControl = refreshControl
+        print("setupRefreshControl called")
     }
-
+    
     @objc func refreshMovies() {
         viewModel.currentPage = 1
-        viewModel.movies.removeAll()
         tableView.reloadData()
-        refreshControl.beginRefreshing()
-        viewModel.fetchMovies(page: viewModel.currentPage) { [weak self] _ in
-            DispatchQueue.main.async {
-                self?.refreshControl.endRefreshing()
-                self?.tableView.reloadData()
+        
+        fetchWatchlistAndMovies()
+    }
+    
+    func fetchWatchlistAndMovies() {
+        print("fetchWatchlistAndMovies called")
+        viewModel.fetchWatchlist { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success:
+                self.fetchMovies()
+                self.refreshControl.endRefreshing()
+            case .failure(let error):
+                print("Error fetching watchlist: \(error)")
+                self.refreshControl.endRefreshing()
             }
         }
     }
     
-    @objc func handleAddedToWatchlistNotification(_ notification: Notification) {
-        if let userInfo = notification.userInfo, let movieId = userInfo["movieId"] as? Int {
-            if let index = viewModel.movies.firstIndex(where: { $0.id == movieId }) {
-                viewModel.fetchWatchlist { [weak self] result in
-                    switch result {
-                    case .success:
-                        self?.viewModel.movies[index].isInWatchlist = self?.viewModel.watchlist.contains(movieId) ?? false
-                        DispatchQueue.main.async {
-                            self?.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
-                        }
-                    case .failure(let error):
-                        print("Error fetching watchlist: \(error)")
-                    }
-                }
+    func fetchMovies() {
+        print(viewModel.currentPage)
+        viewModel.fetchMovies(page: viewModel.currentPage) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success:
+                self.tableView.reloadData()
+            case .failure(let error):
+                print("Error fetching movies: \(error)")
             }
         }
-    }
-    
-    private func bindViewModel() {
     }
 }
